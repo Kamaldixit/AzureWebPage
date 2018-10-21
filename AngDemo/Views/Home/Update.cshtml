@@ -1,0 +1,55 @@
+﻿<div class="container" ng-controller="update">
+    <h2>Update</h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">ID:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="id" placeholder="Enter ID to Update.." name="id" ng-model="id">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" ng-model="username">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="userpassword">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Address:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="address" placeholder="Enter Address" name="Address" ng-model="useraddress">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Age:</label>
+            <div class="col-sm-4">
+                <input type="number" class="form-control" id="age" placeholder="Enter age" name="age" ng-model="userage">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Mobile:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile" name="mobile" ng-model="usermobile">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="updateData()">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+</div>

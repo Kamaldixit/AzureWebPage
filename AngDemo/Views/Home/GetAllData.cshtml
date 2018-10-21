@@ -1,0 +1,46 @@
+﻿<div class="container" ng-controller="getalldata">
+
+
+    <button type="button" class="btn btn-success" ng-click="refreshData()" style="float:right">Refresh Table</button>   
+     <input class="form-control" id="myInput" type="text" placeholder="Search..">
+       
+    
+        <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Role</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+            <tr ng-repeat="x in APIdata">
+                <td>{{x.Name}}</td>
+                <td>{{x.Age}}</td>
+                <td>{{x.UserEmail}}</td>
+                <td>{{x.UserAdress}}</td>
+                <td>{{x.UserRole}}</td>
+                <td>{{x.UserStatus}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+

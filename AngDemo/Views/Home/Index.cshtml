@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registeration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("../Res/blur.jpg");
+            height: 100%;
+            background-position:inherit;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bg {
+            background-image: url("../Res/cover2.jpg");
+        }
+
+       
+       .whitefont{
+           color:white;
+       }
+
+        /*label{
+            color:white;
+        }
+
+        h2{
+            color:white;
+        }
+
+        tr{
+            color:white;
+        }*/
+
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="home">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Azure Project</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#!getalldata">Get all Data</a></li>
+                <li><a id="fontcolor">Change Font Color</a></li>
+                <li><a id="bg">Change Background</a></li>
+                <li><a href="#!delete" id="delete">Delete Data</a></li>
+                <li><a href="#!update" id="delete">Update Data</a></li>
+
+            </ul>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group" ng-init="fontColor='white'">
+                    <input type="text" class="form-control" placeholder="Search" name="search" ng-model="fontColor">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div ng-view></div>
+
+
+    <script>
+
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+            .when("/login", {
+                templateUrl: "Login"
+            })
+            .when("/register", {
+                templateUrl: "Register"
+            })
+            .when("/getalldata", {
+                templateUrl: "GetAllData"
+            })
+            .when("/delete", {
+                templateUrl: "Delete"
+            })
+            .when("/update", {
+                templateUrl: "Update"
+            })
+        });
+
+        
+
+        app.controller('home', function ($scope) {
+
+            
+
+        });
+
+        app.controller('update', function ($scope, $http) {
+
+            $scope.updateData = function () {
+
+                var data = {
+                    UserId1: $scope.id,
+                    Name: $scope.username,
+                    UserPassword: $scope.userpassword,
+                    UserAdress: $scope.useraddress,
+                    Age: $scope.userage,
+                    UserEmail: $scope.usermobile
+
+                };
+
+                var config = {
+                    headers: {
+                        'Accept': 'application/json;'
+                    }
+                }
+
+                $http.put("http://localhost:16106/api/values", JSON.stringify(data), config)
+                    .then(function (response) {
+                        console.log(response.status);
+                    },
+                        function (response) {
+                            console.log(response.status);
+                        }
+                    );
+            };
+
+        });
+
+
+        app.controller('register', function ($scope, $http) {
+
+            $scope.registerData = function () {
+
+                var data = {
+                    Name: $scope.username,
+                    UserPassword: $scope.userpassword,
+                    UserAdress: $scope.useraddress,
+                    Age: $scope.userage,
+                    UserEmail: $scope.usermobile
+
+                };
+
+                var config = {
+                    headers: {
+                        'Accept': 'application/json;'
+                    }
+                }
+                    
+                $http.post("http://localhost:16106/api/values", JSON.stringify(data), config)
+                    .then(function (response) {
+                        console.log(response.status);
+                    },
+                        function (response) {
+                            console.log(response.status);
+                        }
+                    );
+            };
+
+        });
+
+        app.controller('delete', function ($scope, $http) {
+
+            $scope.deleteData = function () {
+
+                var data =
+                    {
+                        UserId1: $scope.id
+                    };
+
+
+
+                $http.delete("http://localhost:16106/api/values", JSON.stringify(data)).then(function (response) {
+                    console.log(response.status);
+                },
+                        function (response) {
+                            console.log(response.status);
+                        }
+                    );
+
+
+       }
+        });
+
+       
+
+
+
+
+        app.controller('getalldata', function ($scope, $http) {
+
+            $http.get("http://localhost:16106/api/Values/List")
+                    .then(function (response) {
+                        $scope.APIdata = response.data;
+                    });
+
+
+            $scope.refreshData = function()
+            {
+                
+                $http.get("http://localhost:16106/api/Values/List")
+                    .then(function (response) {
+                        $scope.APIdata = response.data;
+         });
+            }
+
+        });
+
+
+
+        $(document).ready(function () {
+
+            $("#fontcolor").click(function () {
+                $("label, tr, h2").toggleClass("whitefont");
+            });
+
+           $("#bg").click(function () {
+                $("body").toggleClass("bg");
+            });
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>

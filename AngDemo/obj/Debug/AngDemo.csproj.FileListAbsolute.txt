@@ -1,0 +1,96 @@
+D:\VS Projects\AngDemo\AngDemo\bin\AngDemo.dll.config
+D:\VS Projects\AngDemo\AngDemo\bin\AngDemo.dll
+D:\VS Projects\AngDemo\AngDemo\bin\AngDemo.pdb
+D:\VS Projects\AngDemo\AngDemo\bin\Antlr3.Runtime.dll
+D:\VS Projects\AngDemo\AngDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\VS Projects\AngDemo\AngDemo\bin\Newtonsoft.Json.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Helpers.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Mvc.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Optimization.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Razor.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.Deployment.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.dll
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.Razor.dll
+D:\VS Projects\AngDemo\AngDemo\bin\WebGrease.dll
+D:\VS Projects\AngDemo\AngDemo\bin\Antlr3.Runtime.pdb
+D:\VS Projects\AngDemo\AngDemo\bin\Newtonsoft.Json.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Helpers.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Mvc.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Optimization.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.Razor.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.Deployment.xml
+D:\VS Projects\AngDemo\AngDemo\bin\System.Web.WebPages.Razor.xml
+D:\VS Projects\AngDemo\AngDemo\obj\Debug\AngDemo.csprojResolveAssemblyReference.cache
+D:\VS Projects\AngDemo\AngDemo\obj\Debug\AngDemo.dll
+D:\VS Projects\AngDemo\AngDemo\obj\Debug\AngDemo.pdb
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\AngDemo.dll.config
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\AngDemo.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\AngDemo.pdb
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\Antlr3.Runtime.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\Newtonsoft.Json.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Helpers.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Mvc.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Optimization.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Razor.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.Deployment.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.Razor.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\WebGrease.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\Antlr3.Runtime.pdb
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\Newtonsoft.Json.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Helpers.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Mvc.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Optimization.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Razor.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.Deployment.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.WebPages.Razor.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\obj\Debug\AngDemo.csprojResolveAssemblyReference.cache
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\obj\Debug\AngDemo.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\obj\Debug\AngDemo.pdb
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Net.Http.Formatting.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Cors.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.Cors.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.WebHost.dll
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Net.Http.Formatting.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.Cors.xml
+D:\VS Projects\aaaaaaaaaaa\AngDemo\AngDemo\bin\System.Web.Http.WebHost.xml
+D:\VS Projects\Angular Web\AngDemo\bin\AngDemo.dll.config
+D:\VS Projects\Angular Web\AngDemo\bin\AngDemo.dll
+D:\VS Projects\Angular Web\AngDemo\bin\AngDemo.pdb
+D:\VS Projects\Angular Web\AngDemo\bin\Antlr3.Runtime.dll
+D:\VS Projects\Angular Web\AngDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\VS Projects\Angular Web\AngDemo\bin\Newtonsoft.Json.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Net.Http.Formatting.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Cors.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Helpers.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.Cors.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.WebHost.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Mvc.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Optimization.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Razor.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Deployment.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.dll
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Razor.dll
+D:\VS Projects\Angular Web\AngDemo\bin\WebGrease.dll
+D:\VS Projects\Angular Web\AngDemo\bin\Antlr3.Runtime.pdb
+D:\VS Projects\Angular Web\AngDemo\bin\Newtonsoft.Json.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Net.Http.Formatting.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Helpers.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.Cors.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Http.WebHost.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Mvc.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Optimization.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Razor.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Deployment.xml
+D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Razor.xml
+D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.csprojResolveAssemblyReference.cache
+D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.dll
+D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.pdb

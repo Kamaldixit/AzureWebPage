@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body {
+       body {
             background-image: url("../Res/blur.jpg");
             height: 100%;
             background-position:inherit;
@@ -21,13 +21,14 @@
         .bg {
             background-image: url("../Res/cover2.jpg");
         }
+          
 
        
-       .whitefont{
+     /*  .whitefont{
            color:white;
        }
 
-        /*label{
+        label{
             color:white;
         }
 
@@ -39,6 +40,32 @@
             color:white;
         }*/
 
+
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .carousel-inner img {
+            width: 100%; /* Set width to 100% */
+            margin: auto;
+            min-height: 200px;
+        }
+
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+        @@media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+            }
+        }
+
     </style>
 </head>
 <body ng-app="myApp" ng-controller="home">
@@ -49,7 +76,7 @@
                 <a class="navbar-brand" href="#">Azure Project</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="#!homePage">Home</a></li>
                 <li><a href="#!getalldata">Get all Data</a></li>
                 <li><a id="fontcolor">Change Font Color</a></li>
                 <li><a id="bg">Change Background</a></li>
@@ -69,6 +96,7 @@
             </ul>
         </div>
     </nav>
+    
 
 
     <div ng-view></div>
@@ -94,6 +122,9 @@
             .when("/update", {
                 templateUrl: "Update"
             })
+            .when("/homePage", {
+                templateUrl: "HomePage"
+            })
         });
 
         
@@ -101,20 +132,28 @@
         app.controller('home', function ($scope) {
 
             
+             
+        });
+
+        app.controller('login', function ($scope, $http) {
+
 
         });
+
+
 
         app.controller('update', function ($scope, $http) {
 
             $scope.updateData = function () {
 
                 var data = {
-                    UserId1: $scope.id,
-                    Name: $scope.username,
-                    UserPassword: $scope.userpassword,
-                    UserAdress: $scope.useraddress,
-                    Age: $scope.userage,
-                    UserEmail: $scope.usermobile
+                    UserId1: $scope.userId,
+                    Name: $scope.userName,
+                    UserPassword: $scope.userPassword,
+                    UserAdress: $scope.userAddress,
+                    Age: $scope.userAge,
+                    UserEmail: $scope.userEmail,
+                    UserMobile: $scope.userMobile
 
                 };
 
@@ -132,6 +171,61 @@
                             console.log(response.status);
                         }
                     );
+
+                alert('Data updated successfully');
+
+                $scope.userName = "";
+                $scope.userPassword = "";
+                $scope.userAddress = "";
+                $scope.userAge = "";
+                $scope.userMobile = "";
+                $scope.userEmail = "";
+                $scope.userId = "";
+               
+            };
+            
+            $scope.getData = function () {
+
+                var config = {
+                                params:
+                                    {
+                                        id: $scope.userId
+                                    }
+                             }
+
+                
+                $http.get("http://localhost:16106/api/Values/", config)
+                    .then(function (response) {
+                        var mres = response.data;
+
+                        if (mres.Name != null)
+                        {
+                            $scope.userName = mres.Name;
+                            $scope.userPassword = mres.UserPassword;
+                            $scope.userAddress = mres.UserAdress;
+                            $scope.userAge = mres.Age;
+                            $scope.userMobile = mres.UserMobile;
+                            $scope.userEmail = mres.UserEmail;
+                            
+
+                        }
+                         else
+                        {
+                            $scope.userName = "";
+                            $scope.userPassword = "";
+                            $scope.userAddress = "";
+                            $scope.userAge = "";
+                            $scope.userMobile = "";
+                            $scope.userEmail = "";
+                            $scope.msg = "ID not found.....";
+                            alert('Invalid ID :' + $scope.userId);
+                        }
+                        
+                    });
+                
+
+                
+                
             };
 
         });
@@ -141,12 +235,68 @@
 
             $scope.registerData = function () {
 
+                var config = {
+                    params:
+                        {
+                            id: $scope.userId
+                        }
+                }
+
+                
+                $http.get("http://localhost:16106/api/Values/", config)
+                    .then(function (response) {
+                        var mres = response.data;
+
+                        if (mres.Name != null)
+                        {
+                            alert('ID already exist, Please choose another one.');
+                            $scope.userId = "";
+                        }
+                        else
+                        {
+                            var data = {
+                                UserId1: $scope.userId,
+                                Name: $scope.userName,
+                                UserPassword: $scope.userPassword,
+                                UserAdress: $scope.userAddress,
+                                Age: $scope.userAge,
+                                UserEmail: $scope.userEmail,
+                                UserMobile: $scope.userMobile
+                            }
+
+                            var config = {
+                                headers: {
+                                    'Accept': 'application/json;'
+                                }
+                            }
+
+                            $http.post("http://localhost:16106/api/values", JSON.stringify(data), config)
+
+                            alert('Data Saved Successfully');
+
+                            $scope.userName = "";
+                            $scope.userPassword = "";
+                            $scope.userAddress = "";
+                            $scope.userAge = "";
+                            $scope.userMobile = "";
+                            $scope.userEmail = "";
+                            $scope.userId = "";
+                        };
+
+                        
+                    });
+            };
+                    });
+/*
+
                 var data = {
-                    Name: $scope.username,
-                    UserPassword: $scope.userpassword,
-                    UserAdress: $scope.useraddress,
-                    Age: $scope.userage,
-                    UserEmail: $scope.usermobile
+                    UserId1: $scope.userId,
+                    Name: $scope.userName,
+                    UserPassword: $scope.userPassword,
+                    UserAdress: $scope.userAddress,
+                    Age: $scope.userAge,
+                    UserEmail: $scope.userEmail,
+                    UserMobile: $scope.userMobile
 
                 };
 
@@ -164,9 +314,21 @@
                             console.log(response.status);
                         }
                     );
+
+                alert('Data Saved Successfully');
+
+                $scope.userName = "";
+                $scope.userPassword = "";
+                $scope.userAddress = "";
+                $scope.userAge = "";
+                $scope.userMobile = "";
+                $scope.userEmail = "";
+                $scope.userId = "";
             };
 
         });
+
+ */
 
         app.controller('delete', function ($scope, $http) {
 
@@ -225,7 +387,7 @@
 
            $("#bg").click(function () {
                 $("body").toggleClass("bg");
-            });
+           });
 
         });
 

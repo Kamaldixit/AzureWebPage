@@ -40,6 +40,10 @@ namespace AngDemo.controller
             return View();
         }
 
+        public ActionResult HomePage()
+        {
+            return View();
+        }
 
 
 	}

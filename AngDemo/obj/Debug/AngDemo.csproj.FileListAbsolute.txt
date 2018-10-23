@@ -91,6 +91,6 @@ D:\VS Projects\Angular Web\AngDemo\bin\System.Web.Razor.xml
 D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.xml
 D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Deployment.xml
 D:\VS Projects\Angular Web\AngDemo\bin\System.Web.WebPages.Razor.xml
-D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.csprojResolveAssemblyReference.cache
 D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.dll
 D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.pdb
+D:\VS Projects\Angular Web\AngDemo\obj\Debug\AngDemo.csprojResolveAssemblyReference.cache

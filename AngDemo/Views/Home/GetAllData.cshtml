@@ -7,24 +7,24 @@
     
         <table class="table table-hover table-bordered">
         <thead>
-            <tr>
+            <tr class="danger">
+                <th>ID</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th>Role</th>
-                <th>Status</th>
+                <th>Mobile</th>
             </tr>
         </thead>
         <tbody id="myTable">
 
-            <tr ng-repeat="x in APIdata">
+            <tr class="success" ng-repeat="x in APIdata">
+                <td>{{x.UserId1}}</td>
                 <td>{{x.Name}}</td>
                 <td>{{x.Age}}</td>
                 <td>{{x.UserEmail}}</td>
                 <td>{{x.UserAdress}}</td>
-                <td>{{x.UserRole}}</td>
-                <td>{{x.UserStatus}}</td>
+                <td>{{x.UserMobile}}</td>
             </tr>
 
         </tbody>

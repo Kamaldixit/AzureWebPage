@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Res\friends.jpg" />
     <Content Include="packages.config" />
     <Content Include="Res\blur.jpg" />
     <Content Include="Res\cover.jpg" />
@@ -129,6 +130,7 @@
     <Content Include="Views\Home\GetAllData.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\Update.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

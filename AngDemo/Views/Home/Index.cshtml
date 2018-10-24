@@ -82,13 +82,13 @@
                 <li><a id="bg">Change Background</a></li>
                 <li><a href="#!delete" id="delete">Delete Data</a></li>
                 <li><a href="#!update" id="delete">Update Data</a></li>
-
             </ul>
             <form class="navbar-form navbar-left" action="/action_page.php">
                 <div class="form-group" ng-init="fontColor='white'">
                     <input type="text" class="form-control" placeholder="Search" name="search" ng-model="fontColor">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
+
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#!register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -96,7 +96,10 @@
             </ul>
         </div>
     </nav>
-    
+
+
+   <!-- <iframe src="http://free.timeanddate.com/clock/i6h0cl88/n176/fn3/fs16/fcff0/tc000/bas2/bat1/bacfff/pa8/tt0/tw1/th1/tb4" frameborder="0" width="207" height="57" align="right"></iframe>
+  -->
 
 
     <div ng-view></div>
@@ -137,7 +140,32 @@
 
         app.controller('login', function ($scope, $http) {
 
+            $scope.login = function () {
 
+                var config = {
+                    params:
+                        {
+                            email: $scope.userEmail,
+
+                            pass: $scope.userPassword
+                        }
+                }
+
+
+                $http.get("http://localhost:16106/api/Values/", config)
+                    .then(function (response) {
+                        var mres = response.data;
+
+                        if (mres.UserEmail != null) {
+                            alert("Welcome " + mres.Name)
+                        }
+                        else {
+                            alert('Invalid Email or Password');
+                        }
+
+                    });
+
+            }
         });
 
 
@@ -233,59 +261,70 @@
 
         app.controller('register', function ($scope, $http) {
 
-            $scope.registerData = function () {
-
-                var config = {
-                    params:
-                        {
-                            id: $scope.userId
-                        }
-                }
+            $scope.registerData = function () 
+            {
 
                 
-                $http.get("http://localhost:16106/api/Values/", config)
-                    .then(function (response) {
-                        var mres = response.data;
+                if ($scope.userId == "" || $scope.userName == "" || $scope.userPassword == "" || $scope.userAge == "" || $scope.userMobile == "" || $scope.userEmail == "" || $scope.userAddress == "") {
+                    alert("Fields cann't be empty");
+                }
 
-                        if (mres.Name != null)
-                        {
-                            alert('ID already exist, Please choose another one.');
-                            $scope.userId = "";
-                        }
-                        else
-                        {
-                            var data = {
-                                UserId1: $scope.userId,
-                                Name: $scope.userName,
-                                UserPassword: $scope.userPassword,
-                                UserAdress: $scope.userAddress,
-                                Age: $scope.userAge,
-                                UserEmail: $scope.userEmail,
-                                UserMobile: $scope.userMobile
+                else {
+
+
+                    var config = {
+                        params:
+                            {
+                                id: $scope.userId
                             }
+                    }
 
-                            var config = {
-                                headers: {
-                                    'Accept': 'application/json;'
+
+                    $http.get("http://localhost:16106/api/Values/", config)
+                        .then(function (response) {
+                            var mres = response.data;
+
+                            if (mres.Name != null) {
+                                alert('ID already exist, Please choose another one.');
+                                $scope.userId = "";
+                            }
+                            else {
+                                var data = {
+                                    UserId1: $scope.userId,
+                                    Name: $scope.userName,
+                                    UserPassword: $scope.userPassword,
+                                    UserAdress: $scope.userAddress,
+                                    Age: $scope.userAge,
+                                    UserEmail: $scope.userEmail,
+                                    UserMobile: $scope.userMobile
                                 }
-                            }
 
-                            $http.post("http://localhost:16106/api/values", JSON.stringify(data), config)
+                                var config = {
+                                    headers: {
+                                        'Accept': 'application/json;'
+                                    }
+                                }
 
-                            alert('Data Saved Successfully');
+                                $http.post("http://localhost:16106/api/values", JSON.stringify(data), config)
 
-                            $scope.userName = "";
-                            $scope.userPassword = "";
-                            $scope.userAddress = "";
-                            $scope.userAge = "";
-                            $scope.userMobile = "";
-                            $scope.userEmail = "";
-                            $scope.userId = "";
-                        };
+                                alert('Data Saved Successfully');
 
-                        
-                    });
-            };
+                                $scope.userName = "";
+                                $scope.userPassword = "";
+                                $scope.userAddress = "";
+                                $scope.userAge = "";
+                                $scope.userMobile = "";
+                                $scope.userEmail = "";
+                                $scope.userId = "";
+                            };
+
+
+                        });
+
+                }
+                };
+
+
                     });
 /*
 
@@ -334,20 +373,81 @@
 
             $scope.deleteData = function () {
 
-                var data =
-                    {
-                        UserId1: $scope.id
-                    };
 
 
 
-                $http.delete("http://localhost:16106/api/values", JSON.stringify(data)).then(function (response) {
+
+
+                var config = {
+                    params:
+                        {
+                            id: $scope.userId
+                        }
+                }
+
+
+                $http.get("http://localhost:16106/api/Values/", config)
+                    .then(function (response) {
+                        var mres = response.data;
+
+                        if (mres.Name != null)
+                        {
+                            
+
+                            var config = {
+                                params:
+                                    {
+                                        id: $scope.userId
+                                    }
+                            }
+
+
+
+                            $http.delete("http://localhost:16106/api/values", config).then(function (response) {
+                                console.log(response.status);
+                            },
+                                    function (response) {
+                                        console.log(response.status);
+                                    }
+                                );
+                            alert('Data deleted for : ' + mres.Name);
+                            $scope.userId = "";
+                        }
+
+                        else
+                        {
+                            alert("ID not found!!!")
+                        }
+
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+             /*   var config = {
+                    params:
+                        {
+                            id: $scope.userId
+                        }
+                }
+
+
+
+                $http.delete("http://localhost:16106/api/values", config).then(function (response) {
                     console.log(response.status);
                 },
                         function (response) {
                             console.log(response.status);
                         }
-                    );
+                    );*/
 
 
        }
